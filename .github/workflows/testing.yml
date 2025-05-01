@@ -1,0 +1,17 @@
+name: Hello ARM64 Ubuntu
+
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  test-arm64:
+    runs-on: ubuntu-22.04-arm64  # ✅ Official ARM64 GitHub-hosted runner
+    steps:
+      - name: Print system info
+        run: |
+          echo "🧠 Running on Ubuntu 22.04 ARM64"
+          uname -a
+          lsb_release -a
+          echo "✅ Done!"
